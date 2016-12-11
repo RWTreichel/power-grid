@@ -8,7 +8,7 @@ Changelog:
 # Import Modules
 
 
-# Card Class Definition
+# Class Definition
 class Market:
     def __init__(self):
         pass

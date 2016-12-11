@@ -8,7 +8,8 @@ Changelog:
 # Import Modules
 
 
-# Card Class Definition
+# Class Definition
 class Resource:
-    def __init__(self):
-        pass
+    def __init__(self, type):
+        # type can be: coal, oil, garbage, uranium
+        self.type = type

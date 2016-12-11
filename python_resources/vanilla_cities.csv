@@ -1,0 +1,7 @@
+0,Boston,brown,New York,3
+1,New York,brown,Boston,3,Philadelphia,0,Buffalo,8
+2,Philadelphia,brown,New York,0,Washington,3
+3,Washington,brown,Philadelphia,3,Pittsburgh,6
+4,Buffalo,brown,New York,8,Pittsburgh,7,Detroit,7
+5,Pittsburgh,brown,Washington,6,Buffalo,7,Detroit,6
+6,Detroit,brown,Buffalo,7,Pittsburgh,6
