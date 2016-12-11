@@ -10,8 +10,9 @@
 - Money (Elektro)
 - Power Plant
 - Players
-- Round
-  - 5 Phases
+- Game
+  - 3 "Steps"
+  - Round
     - 1. Determine Player Order
     - 2. Auction Power Plants
     - 3. Buying Resources
@@ -23,3 +24,6 @@
 - Cities
   - Name
   - "Slots" (10, 15, 20 Elektro)
+- Income Table
+- Adjustments for # of Players
+- Production Rate Table
