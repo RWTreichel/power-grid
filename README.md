@@ -2,6 +2,7 @@
 
 ## Entities
 - Map / Game Board
+  - Regions
 - Resources
   - Coal
   - Oil
