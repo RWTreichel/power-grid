@@ -10,7 +10,8 @@ Changelog:
 
 # Class Definition
 class Player:
-    def __init__(self, name, color):
+    def __init__(self, id, name, color):
+        self.id = id
         self.name = name
         self.color = color
         self.score = 0
@@ -31,5 +32,9 @@ class Player:
 
 # FOR TESTING
 if __name__ == '__main__':
-    player_1 = Player('Justin', 'Green')
-    print('NAME: {0}, COLOR: {1}, SCORE: {2}, RESOURCES: {3}'.format(player_1.name, player_1.color, player_1.score, player_1.resources))
+    player_1 = Player(1, 'Justin', 'Green')
+    player_2 = Player(2, 'Richard', 'Red')
+    print('PLAYER 1 - NAME: {0}, COLOR: {1}, SCORE: {2}, RESOURCES: {3}'.format(player_1.name, player_1.color,
+                                                                     player_1.score, player_1.resources))
+    print('PLAYER 2 - NAME: {0}, COLOR: {1}, SCORE: {2}, RESOURCES: {3}'.format(player_2.name, player_2.color,
+                                                                     player_2.score, player_2.resources))

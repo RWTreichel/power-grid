@@ -12,7 +12,6 @@ Changelog:
 
 # Import Modules
 import operator
-from python_classes.class_player import *
 from python_classes.class_game import *
 
 
@@ -30,6 +29,7 @@ def phase_1(board_obj):
     sorted_city_count = [x for x in sorted_city_count if x[0]]
     sorted_city_count.reverse()
 
+    # NEED to add in tie breaker rule
     return sorted_city_count
 
 

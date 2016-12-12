@@ -23,6 +23,14 @@ class City:
                     self.name = row_data[1]
                     self.region = row_data[2]
                     self.connections = [(row_data[i], row_data[i+1]) for i in range(3, len(row_data)-1) if i % 2 == 1]
+                    """
+                    SAME AS ABOVE
+                    self.connections = []
+                    for i in range(3, len(row_data) - 1):
+                        if i % 2 == 1:
+                            data = (row_data[i], row_data[i+1])
+                            self.connections.append(data)
+                    """
                     self.slot_10 = None
                     self.slot_15 = None
                     self.slot_20 = None

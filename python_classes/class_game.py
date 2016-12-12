@@ -21,7 +21,8 @@ class Game:
     def __init__(self, player_list=[], options=None):
         self.player_list = player_list
         self.round = 0
-        self.round_phases = []
+
+        # Create Board Object
         if options:
             self.board = Board(options['regions'], map=options['map'])
         else:
@@ -50,6 +51,8 @@ if __name__ == '__main__':
     myGame = Game()
     myGame.options = {'map': 'USA',
                       'regions': ['brown']}
-    myGame.add_player(Player('Justin', 'Green'))
-    myGame.add_player(Player('Richard', 'Red'))
+    myGame.add_player(Player(1, 'Justin', 'Green'))
+    myGame.add_player(Player(2, 'Richard', 'Red'))
+    # myGame.play_round()
+
     print(myGame.player_list)
