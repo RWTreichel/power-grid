@@ -6,25 +6,25 @@ Changelog:
 """
 
 # Import Modules
-from collections import OrderedDict
 from python_classes.class_player import *
 from python_classes.class_board import *
-from python_functions.func_phase1_determine_player import *
-from python_functions.func_phase2_auction_plants import *
-from python_functions.func_phase3_buy_resources import *
-from python_functions.func_phase4_build import *
-from python_functions.func_phase5_bureaucracy import *
+from python_classes.class_card import *
+from python_classes.class_resource import *
 
 
 # Class Definition
 class Game:
     def __init__(self, player_list=[], options=None):
         self.player_list = player_list
+        self.options = options
+        self.step = 1
         self.round = 0
-
+        self.order = []
+        self.CardDeck = CardDeck()
+        self.resource_market = ResourceMarket()  # Initialize Resource Market
         # Create Board Object
-        if options:
-            self.board = Board(options['regions'], map=options['map'])
+        if self.options:
+            self.board = Board(self.options['regions'], map=self.options['map'])
         else:
             self.board = Board(['brown'])  # Default Region list
 
@@ -33,26 +33,22 @@ class Game:
 
         return self.player_list
 
-    def play_round(self):
-        # Phase 1 - Determine Player Order
-        sorted_city_count = phase_1(self.board)
-
-        # Phase 2 - Auction Power Plants
-
-        # Phase 3 - Buying Resources
-
-        # Phase 4 - Building
-
-        # Phase 5 - Bureaucracy
+    def start_new_game(self):
+        for player in self.player_list:
+            player.elektro = 50  # Start each player with 50 Elecktro
+            player.score = 0  # Start each player with 0 Cities
+            self.order.append(player.id)  # Initialize Player Order
+        self.CardDeck.new_deck()  # Initialize Power Plant Market
+        self.resource_market = ResourceMarket()
 
 
 # FOR TESTING
 if __name__ == '__main__':
-    myGame = Game()
-    myGame.options = {'map': 'USA',
-                      'regions': ['brown']}
-    myGame.add_player(Player(1, 'Justin', 'Green'))
-    myGame.add_player(Player(2, 'Richard', 'Red'))
-    # myGame.play_round()
+    myPlayers = [Player(1, 'Justin', 'Green'),
+                 Player(2, 'Richard', 'Red')]
+    myoptions = {'map': 'USA',
+                 'regions': ['brown']}
+    myGame = Game(player_list=myPlayers, options=myoptions)
+    myGame.start_new_game()
 
     print(myGame.player_list)

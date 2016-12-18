@@ -24,7 +24,7 @@ class City:
                     self.region = row_data[2]
                     self.connections = [(row_data[i], row_data[i+1]) for i in range(3, len(row_data)-1) if i % 2 == 1]
                     """
-                    SAME AS ABOVE
+                    FYI - List comprehension example, loop below is same as line above.
                     self.connections = []
                     for i in range(3, len(row_data) - 1):
                         if i % 2 == 1:

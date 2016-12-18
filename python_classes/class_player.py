@@ -15,6 +15,7 @@ class Player:
         self.name = name
         self.color = color
         self.score = 0
+        self.elektro = 0
         self.resources = {'coal': 0,
                           'oil': 0,
                           'garbage': 0,
@@ -23,6 +24,10 @@ class Player:
     def update_score(self, value):
         self.score += value
         return self.score
+
+    def update_elektro(self, value):
+        self.elektro += value
+        return self.elektro
 
     def update_resources(self, delta_resources):
         for res in delta_resources:
